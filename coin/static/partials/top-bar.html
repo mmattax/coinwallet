@@ -1,0 +1,19 @@
+<div class="contain-to-grid sticky">
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+      <h1><a href="#">nCoin</a></h1>
+      </li>
+    </ul>
+    <section class="top-bar-section" ng:show="user">
+      <ul class="right">
+        <li>
+          <img style="margin-top:7px" data-ng-src="//www.gravatar.com/avatar/{{ user.gravatar }}?d=mm&s=31" />
+        </li>
+        <li>
+        <a href="/logout" target="_self"><i class="fa fa-sign-out"></i> Logout</a>
+        </li>
+      </ul>
+    </section>
+  </nav>
+</div>

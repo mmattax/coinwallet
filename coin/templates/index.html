@@ -1,0 +1,32 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation | Welcome</title>
+    <link rel="stylesheet" href="static/css/foundation.css" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <script src="static/js/vendor/modernizr.js"></script>
+  </head>
+  <body>
+    <div data-ng-include="'static/partials/top-bar.html'"></div>
+    <div class="row" style="margin-top:2em;">
+      <div class="large-12 columns" data-ng-view></div>
+    </div>
+    
+    <script src="static/js/vendor/jquery.js"></script>
+    <script src="static/js/foundation.min.js"></script>
+    <script src="static/js/foundation/foundation.reveal.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-route.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-resource.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-sanitize.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+    <script>
+    (function(user) { window.currentUser = user || null; })({{ user|safe }});
+    </script>
+    <script src="static/js/app.js"></script>
+  </body>
+</html>

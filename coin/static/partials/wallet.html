@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="large-6 medium-6 columns">
+    <table style="width:100%;">
+      <tr>
+        <td>Date</td>
+        <td>Amount</td>
+        <td>Confirmations</td>
+      </tr>
+      <tr data-ng-repeat="transaction in transactions">
+        <td>{{ transaction.time * 1000 | date: 'short' }}</td>
+        <td>{{ transaction.amount }}</td>
+        <td>{{ transaction.confirmations }}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="large-6 medium-6 columns">
+    <div class="panel">
+      Your Balance
+      <h4>{{ user.balance }}Ɖ</h4>
+    </div>
+    <div class="panel">
+      Your Address
+      <h4>{{ user.addresses[0] }}</h4>
+    </div>
+    <div class="panel">
+      Send Money
+      <form data-ng-submit="sendMoney()">
+        <div class="row">
+          <div class="large-12 medium-12 columns">
+            <label for="to_address">Address</label>
+            <input id="to_address" type="text" data-ng-model="transaction.to" />
+          </div>
+          <div class="large-12 medium-12 columns">
+            <label for="amount">Amount</label>
+            <input id="amount" type="number" step="any" data-ng-model="transaction.amount" />
+          </div>
+          <div class="large-12 medium-12 columns">
+            <button class="success">Send</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

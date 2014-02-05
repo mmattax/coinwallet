@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="large-5 medium-5 columns large-centered medium-centered radius">
+    <div class="panel callout" data-ng-hide="doesntHaveAccount">
+      Don't have an account? <a href="" data-ng-click="doesntHaveAccount = true">Create one now.</a>
+    </div>
+    <div class="panel callout" data-ng-show="doesntHaveAccount">
+      Already have an account? <a href="" data-ng-click="doesntHaveAccount = false">Login.</a>
+    </div>
+    <form data-ng-submit="signupOrLogin()" class="panel">
+      <!-- Name -->
+      <div class="row" data-ng-show="doesntHaveAccount">
+        <div class="large-6 medium-6 columns">
+          <label for="first_name">Name</label>
+          <input id="first_name" type="text" placeholder="First" data-ng-model="user.first_name">
+        </div>
+        <div class="large-6 medium-6 columns">
+          <label for="last_name" style="visibility:hidden;" class="hide-for-small-only">Last Name</label>
+          <input id="last_name" type="text" placeholder="Last" data-ng-model="user.last_name">
+        </div>
+      </div>
+      <!-- Email -->
+      <div class="row">
+        <div class="large-12 medium-12 columns">
+          <label for="email">Email</label>
+          <input id="email" type="email" required data-ng-model="user.email" />
+        </div>
+      </div>
+      <!-- Password -->
+      <div class="row">
+        <div class="large-12 medium-12 columns">
+          <label for="password">Password</label>
+          <input id="password" type="password" required data-ng-model="user.password" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-12 medium-12 columns">
+          <button class="success" data-ng-if="!doesntHaveAccount">Login</button>
+          <button class="success" data-ng-if="doesntHaveAccount">Create my account</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
